@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+</head>
+<body>
+<h2>Đăng nhập tài khoản</h2>
+
+<p th:text="${session.error}" style="color:red"></p>
+
+<p th:text="${session.nice}" style="color:blue"></p>
+
+
+<!--Xin chào, <span th:text=${session.username}></span>-->
+<!--<hr>-->
+
+<form action="/account/login" method="post">
+    <label>Tên đăng nhập:</label><br>
+    <input name="username" type="text" placeholder="Nhập username" required><br><br>
+
+    <label>Mật khẩu:</label><br>
+    <input name="password" type="password" placeholder="Nhập password" required><br><br>
+
+    <label>
+        <input type="checkbox" name="remember" value="true">
+        Ghi nhớ đăng nhập
+    </label><br><br>
+
+    <button type="submit">Login</button>
+
+</form>
+
+</body>
+</html>
