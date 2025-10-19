@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category Index Form</title>
+</head>
+<body>
+    <h3>CATEGORY MANAGEMENT</h3>
+    <th:block th:replace="@{/category/form} "/>
+    <hr>
+    <th:block th:replace="@{|category/table|} "/>
+</body>
+</html>
