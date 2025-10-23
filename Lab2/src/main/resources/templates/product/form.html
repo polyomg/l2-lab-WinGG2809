@@ -1,0 +1,54 @@
+<!--<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+</head>
+<body>
+<form action="/product/save" method="post">
+    <input name="name" placeholder="Product name">
+    <input name="price" placeholder="Price">
+    <button>Save</button>
+</form>
+
+<hr>
+<ul>
+    <li>Name: <span th:text="${product.name}">?name</span></li>
+    <li>Price: <span th:text="${product.price}">?price</span></li>
+</ul>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Form</title>
+</head>
+<body>
+<form action="/product/save" method="post">
+    <input name="name" placeholder="Product name">
+    <input name="price" placeholder="Price">
+    <button>Save</button>
+</form>
+
+<hr>
+<ul>
+    <li th:text="${product1?.name}">?1name</li>
+    <li th:text="${product1?.price}">?1price</li>
+</ul>
+
+<ul>
+    <li th:text="${product2?.name}">?2name</li>
+    <li th:text="${product2?.price}">?2price</li>
+</ul>
+
+<ul>
+    <li th:each="item : ${items}">
+        <span th:text="${item.name}"></span> -
+        <span th:text="${item.price}"></span>
+    </li>
+</ul>
+</body>
+</html>
+

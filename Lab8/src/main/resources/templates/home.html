@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Interceptor</title>
+</head>
+<body>
+
+<div>
+    <hr>
+    <div th:if="${session.user != null}">
+        <p>
+            Trạng thái: Đã đăng nhập với tài khoản:
+            <b th:text="${session.user.username}"></b>.
+        </p>
+        <a th:href="@{/auth/logout}">Đăng xuất</a>
+    </div>
+
+    <div th:unless="${session.user != null}">
+        <p>Trạng thái: Bạn chưa đăng nhập.</p>
+        <a th:href="@{/auth/login}">Đi đến trang Đăng nhập</a>
+    </div>
+    <hr>
+</div>
+
+<div>
+    <h3>Bấm vào các link sau để test:</h3>
+
+    <h4>1. Các trang cần đăng nhập:</h4>
+    <ul>
+        <li><a th:href="@{/account/edit-profile}">Test /account/edit-profile</a></li>
+        <li><a th:href="@{/account/change-password}">Test /account/change-password</a></li>
+        <li><a th:href="@{/order/list}">Test /order/list</a></li>
+    </ul>
+
+    <h4>2. Trang Admin (cần vai trò admin):</h4>
+    <ul>
+        <li><a th:href="@{/admin/dashboard}">Test /admin/dashboard (Cần Admin)</a></li>
+    </ul>
+
+    <h4>3. Trang được loại trừ (Công khai):</h4>
+    <ul>
+        <li><a th:href="@{/admin/home/index}">Test /admin/home/index</a></li>
+    </ul>
+</div>
+
+</body>
+</html>
