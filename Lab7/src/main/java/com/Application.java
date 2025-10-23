@@ -1,13 +1,11 @@
-package com.poly.lab7;
+package com;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Lab7Application {
-
+public class Application {
     public static void main(String[] args) {
-        SpringApplication.run(Lab7Application.class, args);
+        SpringApplication.run(Application.class, args);
     }
-
 }
